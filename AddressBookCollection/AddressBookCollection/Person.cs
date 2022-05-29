@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBookCollection
 {
-    internal class Person
+   public class Person
     {
         string firstName;
         string lastName;
@@ -16,6 +16,7 @@ namespace AddressBookCollection
         string zip;
         string phoneNumber;
         string email;
+        internal string FirstName;
 
         public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNumber, string email)
         {
