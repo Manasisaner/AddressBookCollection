@@ -26,8 +26,29 @@ namespace AddressBookCollection
             Console.WriteLine("Enter Phone Number :");
             long phoneNumber = Convert.ToInt64(Console.ReadLine());
             addressBook.AddContact(firstName, lastName, address, city, state, email, zip, phoneNumber);
-            addressBook.ViewContact(item);
-            Console.Read();
-        }
-    }
-}
+            switch (Choice)
+            {
+                case 1:
+                    Console.WriteLine("Enter First Name Of Contact To Edit :");
+                    string nameToEdit = Console.ReadLine();
+                    addressBook.EditContact(nameToEdit);
+                    break;
+                case 2:
+                    Console.WriteLine("Enter First Name Of Contact To Delete :");
+                    string nameToDelete = Console.ReadLine();
+                    addressBook.DeleteContact(nameToDelete);
+                    break;
+                case 3:
+                    Console.WriteLine("Enter First Name Of Contact To View :");
+                    string nameToView = Console.ReadLine();
+                    addressBook.ViewContact();
+                    break;
+
+                case 4:
+                    Console.WriteLine("It is Not Found Any Information.");
+                    break;
+            }
+        } while (Choice != 4);
+
+     }
+  }
